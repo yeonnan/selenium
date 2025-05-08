@@ -11,4 +11,13 @@ assert
 조건을 예상하는 곳에서 사용할 수 있는 파이썬 메서드
 조건은 항상 True에 해당해야 하며, 조건이 True가 아니라면 테스트 실패
 '''
-assert(ItemsInCart==2)          # AssertionError
+# assert(ItemsInCart==2)          # AssertionError
+
+
+try:
+    with open('aa.txt', 'r') as reader:
+        reader.read()
+except Exception as e:      
+    # try 블록에 오류가 있을 때 except의 e 변수로 보내짐
+    # 사용자 정의된 메시지를 제공하는 대신 e 변수 출력 가능 
+    print(e)
