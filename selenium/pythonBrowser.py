@@ -1,8 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
+# 크롬 브라우저에서 테스트 할 수 있게 해주는 역할
 service_obj = Service('/Users/dayeonahn/Downloads/chromedriver-mac-arm64/chromedriver') 
 driver = webdriver.Chrome(service=service_obj)
+
 
 driver.maximize_window()        # 전체화면
 # 크롬 브라우저에서 url 열기
