@@ -19,7 +19,18 @@ driver.find_element(By.NAME, 'login').send_keys('hello@gmail.com')
 driver.find_element(By.ID, 'password').send_keys('test1234!')
 driver.find_element(By.NAME, 'commit').click()
 
-# name이나 id 같은 것들은 개발자들이 정의해둬야 사용 가능하다.
-# 그런데 어떤 요소, 속성, 정의든 XPath나 CSS는 페이지의 아무 요소에나 활용 가능하다.
+
+'''
+name이나 id 같은 것들은 개발자들이 정의해둬야 사용 가능하다.
+그런데 어떤 요소, 속성, 정의든 XPath나 CSS는 페이지의 아무 요소에나 활용 가능하다.
+'''
+
+# Xpath : //tagname[@attribute='value'] -> //input[@type='submit]
+# CSS : tagname[@attribute='value'] -> input[@type='submit]
+driver.find_element(By.CSS_SELECTOR, 'input[name="hidden"]').send_keys('aaa')
+driver.find_element(By.XPATH, '//input[@type="submit"]').click()
+message = driver.find_element(By.CLASS_NAME, 'auth-form-body').text
+print(message)
+assert 'Success' in message
 
 time.sleep(10)
