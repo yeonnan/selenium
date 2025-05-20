@@ -1,4 +1,5 @@
 import time
+from selenium.webdriver.support.ui import Select
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -29,8 +30,13 @@ name이나 id 같은 것들은 개발자들이 정의해둬야 사용 가능하�
 # CSS : tagname[attribute='value'] -> input[type='submit'] / #id속성값 / .classname
 driver.find_element(By.CSS_SELECTOR, 'input[name="name"]').send_keys('yeon')
 driver.find_element(By.CSS_SELECTOR, '#inlineRadio1').click()
-driver.find_element(By.XPATH, '//input[@type="submit"]').click()
 
+# static dropdown
+dropdown = Select(driver.find_element(By.ID, 'exampleFormControlSelect1'))
+dropdown.select_by_visible_text("Female")       # 텍스트를 기반으로 어떤 옵션이든 선택 가능
+dropdown.select_by_index(0)
+
+driver.find_element(By.XPATH, '//input[@type="submit"]').click()
 message = driver.find_element(By.CLASS_NAME, 'alert-success ').text
 print(message)      # 어떤 텍스트 값이 취득되든지 message 변수에 저장
 assert 'Success' in message     # print 되는 메시지에 Success 라는 키워드가 있는지 확인
