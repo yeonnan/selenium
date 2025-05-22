@@ -20,5 +20,17 @@ for checkbox in checkboxes:
         assert checkbox.is_selected()      # 해당 체크박스가 선택되었는지 여부 알려주는 메서드
         break
 
+
+radiobuttons = driver.find_elements(By.CSS_SELECTOR, '.radioButton')
+radiobuttons[2].click()
+assert radiobuttons[2].is_selected()
+
+
+# is_displayed : 해당 요소가 화면에 표시됐는지 알려줌
+assert driver.find_element(By.ID, 'displayed-text').is_displayed()
+driver.find_element(By.ID, 'hide-textbox').click()
+assert not driver.find_element(By.ID, 'displayed-text').is_displayed()
+
+
 time.sleep(3)
 driver.quit()       # selenium이 띄운 모든 브라우저 창 완전히 종료, webdriver 세션도 메모리에서 완전히 정리
