@@ -7,3 +7,14 @@ def test_firstProgram():
     print('hello')
 
 # 모든 코드는 메서드로 감싸야 한다.
+
+
+'''
+모든 테스트 파일 실행 py.test -v
+모든 로그까지 보이게 py.test -v -s
+'''
+
+
+
+def test_greet():
+    print('good morning')
