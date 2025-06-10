@@ -8,6 +8,9 @@
 
 # 마킹한 TC만 실행 : py.test -m 명칭 -v -s
 
+# fixtures : TC의 초기화와 해제 코드로서 사용된다. 
+# - conftest 파일의 경우 픽스쳐를 일반화시켜 모든 TC에서 사용할 수 있게 한다.
+
 
 import pytest
 

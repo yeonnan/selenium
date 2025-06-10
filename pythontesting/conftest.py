@@ -1,0 +1,14 @@
+'''
+파일명은 반드시 conftest
+이 파일에서 픽스쳐를 선언하면 이 폴더들 안에 있는 모든 테스트 파일에서 픽스쳐 사용 가능
+(모든 테스트 파일 : 모든 pytest 테스트 파일)
+'''
+
+import pytest
+
+
+@pytest.fixture(scope='class')
+def setup():
+    print('첫번째~')
+    yield
+    print('나중에')

@@ -7,7 +7,7 @@
 import pytest
 
 @pytest.mark.smoke   
-def test_firstProgram():
+def test_firstProgram(setup):
     print('hello')
 
 
