@@ -12,3 +12,8 @@ def setup():
     print('첫번째~')
     yield
     print('나중에')
+
+@pytest.fixture()
+def dataLoad():
+    print('사용자 프로필 데이터 생성 중')
+    return ['yeon', 'ahn', 'https://github.com/yeonnan']
