@@ -15,3 +15,7 @@ def test_firstProgram(setup):
 @pytest.mark.xfail
 def test_greet():
     print('good morning')
+
+
+def test_crossBrowser(crossBrowser):
+    print(crossBrowser[0])
